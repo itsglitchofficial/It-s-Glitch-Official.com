@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="styles.css">
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Are you my wife?</title>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <form action="index.html" method="post" onsubmit="return validateLogin()">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Log In</button>
+    </form>
+    <p id="loginMessage"> Basta type mo nalang po</p>
+  </div>
+
+  <script>
+    function validateLogin() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var loginMessage = document.getElementById('loginMessage');
+
+      // Check if the entered credentials match predefined values
+      if (username === 'okay' && password === 'okay') {
+        loginMessage.innerHTML = 'Login successful. Welcome!';
+        return true; // Allow the form submission
+      } else {
+        loginMessage.innerHTML = 'Ngek! Pangalan ng asawa di po alam?';
+        return false; // Prevent the form submission
+      }
+    }
+  </script>
+
+</body>
+</html>
